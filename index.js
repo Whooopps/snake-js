@@ -33,11 +33,8 @@ function init() {
     for(let i = 0; i < INIT_SNAKE_LEN;i++) {
         snake.push({x: startX + i, y: startY});
     }
-    console.log(snake);
 
-    
     spawnFood();
-    console.log(food);
     score = 0;
     scoreMultiplier = 10;
     speed = 75; 
@@ -140,7 +137,6 @@ function render() {
         let t = i/(snake.length-1);
         let alpha = (1 - t) * 0.5 + t * 1;
         let extraMargin = (1 - t) * (BLOCK_WIDTH/4) + t * 0;
-        console.log(i, extraMargin);
         ctx.fillStyle = `rgb(127,222,127,${alpha})`;
         ctx.fillRect((snake[i].x * BLOCK_WIDTH) + (MARGIN/2) + (extraMargin/2), (snake[i].y * BLOCK_HEIGHT) + (MARGIN/2) + (extraMargin/2), BLOCK_WIDTH - MARGIN - extraMargin, BLOCK_HEIGHT - MARGIN - extraMargin);
     }
